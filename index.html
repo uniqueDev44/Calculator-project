@@ -4,26 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="styles/calculator.css">
 </head>
 <body>
+
+  <p class="js-calculate display-calculation"></p>
+
+
   <button onclick="
    updateCalculation('1');
-    ">1
+    " class="grey-button">1
   </button>
 
   <button onclick="
     updateCalculation('2');
-    ">2
+    " class="grey-button">2
   </button>
 
   <button onclick="
     updateCalculation('3');
-    ">3
+    " class="grey-button">3
   </button>
 
   <button onclick="
     updateCalculation(' + ');
-    ">+
+    " class="orange-button">+
   </button>
 
   <br>
@@ -31,78 +36,84 @@
 
   <button onclick="
     updateCalculation('4');
-    ">4
+    " class="grey-button">4
   </button>
 
   <button onclick="
     updateCalculation('5');
-    ">5
+    " class="grey-button">5
   </button>
 
   <button onclick="
     updateCalculation('6');
-    ">6
+    " class="grey-button">6
   </button>
 
   <button onclick="
     updateCalculation(' - ');
-    ">-
+    " class="orange-button">-
   </button>
 
   <br>
   <br>
 
-    <button onclick="
+  <button onclick="
     updateCalculation('7');
-    ">7
+    " class="grey-button">7
   </button>
 
   <button onclick="
     updateCalculation('8');
-    ">8
+    " class="grey-button">8
   </button>
 
   <button onclick="
     updateCalculation('9');
-    ">9
+    " class="grey-button">9
   </button>
 
   <button onclick="
     updateCalculation(' * ');
-    ">*
+    " class="orange-button">*
   </button>
 
   <br>
   <br>
 
-    <button onclick="
+  <button onclick="
     updateCalculation('0');
-    ">0
+    " class="grey-button">0
   </button>
 
   <button onclick="
     updateCalculation('.');
-    ">.
+    " class="grey-button">.
   </button>
 
   <button onclick="
     updateCalculation(' / ');
-    ">/
+    " class="grey-button">/
   </button>
 
 
   <button onclick="
-    console.log(eval(calculation))
-    ">= 
+    calculation = eval(calculation);
+    displayCalculation();
+    saveToStorage();
+    " class="orange-button">= 
   </button>
 
-  <script>
-    let calculation = '';
+  <br>
+  <br>
 
-    function updateCalculation(value) {
-      calculation += value
-      console.log(calculation)
-    }
-  </script>
+  <button onclick="
+    calculation = '';
+    localStorage.clear('calculation', calculation);
+    displayCalculation();
+    saveToStorage();
+  " class="grey-button clear-button">Clear
+  </button>
+
+  <script src="scripts/calculator.js"></script>
 </body>
 </html>
